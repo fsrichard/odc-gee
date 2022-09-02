@@ -279,7 +279,7 @@ class Datacube(datacube.Datacube, metaclass=Singleton):
 
         Returns: A dictionary of the metadata.
         '''
-        url = f'gs://earthengine-stac/catalog/{asset.replace("/", "_")}.json'
+        url = f'https://storage.googleapis.com/earthengine-stac/catalog/{asset.replace("/", "_")}.json'
         blob = self.ee.Blob(url)
         return self.ee.Dictionary(blob.string().decodeJSON()).getInfo()
 
